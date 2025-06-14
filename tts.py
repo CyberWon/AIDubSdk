@@ -7,6 +7,7 @@ from typing import Union, Optional
 from enum import Enum
 from fastapi.responses import StreamingResponse, RedirectResponse
 from tts import TTS
+import uvicorn
 
 app = FastAPI()
 
@@ -142,3 +143,7 @@ class MultiphonemeRequest(BaseModel):
 async def multiphoneme(params: MultiphonemeRequest):
     """多音字更新"""
     return {"message": "多音字更新成功"}
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
