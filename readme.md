@@ -76,17 +76,24 @@ HTTP方法：`GET`
 
 ## 设置多音字
 URL: `/multiphoneme`
+
 HTTP方法：`POST`
+
 请求格式：JSON
-请求体：{
-   "data":{},
-   "phoneme":{}, 
+
+请求体：
+```json
+{
+   "data": {"多音字":"duo1 yin1 zi4"}, //多音字,
+   "phoneme":{"i":"o"},  // 自定义的音素，gsv独有
 }
+```
 返回格式：JSON
 返回样例: 
 ```
 {"message": "多音字更新成功"}
 ```
+
 
 
 
